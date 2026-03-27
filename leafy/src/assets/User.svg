@@ -5,12 +5,9 @@
   viewBox="0 0 24 24"
   fill="none"
 >
-  <!-- Círculo mais claro -->
   <circle cx="12" cy="12" r="10" stroke="#DADFD3" stroke-width="2"/>
 
-  <!-- Cabeça -->
   <circle cx="12" cy="9" r="3" stroke="#A3B18A" stroke-width="2"/>
 
-  <!-- Corpo -->
   <path d="M7 19c1.5-3 8.5-3 10 0" stroke="#A3B18A" stroke-width="2"/>
 </svg>
