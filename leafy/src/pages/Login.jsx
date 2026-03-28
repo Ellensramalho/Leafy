@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { Link } from 'react-router-dom';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
@@ -15,70 +15,79 @@ const Login = () => {
         <h1 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-[#8F9F6A]">
           Login
         </h1>
-      <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div>
-            <label
-              htmlFor="email"
-              className="block text-sm/6 font-medium text-[#8F9F6A]"
-            >
-              {' '}
-              Email:{' '}
-            </label>
+        <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <input
-                className="block w-full rounded-md bg-[#F5F9F0] px-3 py-1.5 text-base text-black outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-[#B7C79A] sm:text-sm/6"
-                type="email"
-                placeholder="Digite seu email "
-                value={email}
-                required
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
-          </div>
-          <div>
-            <div className="flex items-center justify-between">
               <label
-                htmlFor="password"
+                htmlFor="email"
                 className="block text-sm/6 font-medium text-[#8F9F6A]"
               >
-                Senha
+                {' '}
+                Email:{' '}
               </label>
-
-              <div className="text-sm">
-                <a
-                  href="#"
-                  className="font-semibold text-[#8F9F6A] hover:text-indigo-300"
-                >
-                  Esqueceu a senha?
-                </a>
+              <div>
+                <input
+                  className="block w-full rounded-md bg-[#F5F9F0] px-3 py-1.5 text-base text-black outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-[#B7C79A] sm:text-sm/6"
+                  type="email"
+                  placeholder="Digite seu email "
+                  value={email}
+                  required
+                  onChange={(e) => setEmail(e.target.value)}
+                />
               </div>
             </div>
+            <div>
+              <div className="flex items-center justify-between">
+                <label
+                  htmlFor="password"
+                  className="block text-sm/6 font-medium text-[#8F9F6A]"
+                >
+                  Senha
+                </label>
 
-            <div className="mt-2">
-              <input
-                name="password"
-                type="password"
-                required
-                autoComplete="current-password"
-                placeholder="Digite sua senha"
-                value={senha}
-                onChange={(e) => setSenha(e.target.value)}
-                className="block w-full rounded-md bg-[#F5F9F0] px-3 py-1.5 text-base text-black outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-[#B7C79A] sm:text-sm/6"
-              />
+                <div className="text-sm">
+                  <a
+                    href="#"
+                    className="font-semibold text-[#8F9F6A] hover:text-indigo-300"
+                  >
+                    Esqueceu a senha?
+                  </a>
+                </div>
+              </div>
+
+              <div className="mt-2">
+                <input
+                  name="password"
+                  type="password"
+                  required
+                  autoComplete="current-password"
+                  placeholder="Digite sua senha"
+                  value={senha}
+                  onChange={(e) => setSenha(e.target.value)}
+                  className="block w-full rounded-md bg-[#F5F9F0] px-3 py-1.5 text-base text-black outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-[#B7C79A] sm:text-sm/6"
+                />
+              </div>
             </div>
-          </div>
-          <div>
-            <button
-              type="submit"
-              className="mt-10 flex w-full justify-center rounded-md bg-[#8F9F6A] px-3 py-1.5 text-sm/6 font-semibold text-white hover:bg-[#7A8C58] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
-            >
-              Entrar
-            </button>
-          </div>
-        </form>
+            <div>
+              <button
+                type="submit"
+                className="mt-10 flex w-full justify-center rounded-md bg-[#8F9F6A] px-3 py-1.5 text-sm/6 font-semibold text-white hover:bg-[#7A8C58] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+              >
+                Entrar
+              </button>
+            </div>
+            <div className="text-sm text-center mt-4">
+              <span className="text-gray-600">Não possui cadastro? </span>
+              <Link
+                to="/cadastro"
+                className="font-semibold text-[#8F9F6A] hover:underline"
+              >
+                Cadastre-se
+              </Link>
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
     </div>
   );
 };
